@@ -1,11 +1,248 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            arjunbhatt.me
-        </title>
-    </head>
-    <body>
-        hi
-    </body>
+<link rel="stylesheet" href="style.css" media="screen" /> <!-- from https://stackoverflow.com/questions/9480773/html-not-loading-css-file-->
+
+<head>
+    <!-- adapted from notion.so and w3schools-->
+    <meta charset="utf-8">
+    <meta name="description" content="Who's Down: The free platform to connect event creators and event seekers">
+    <meta name="keywords" content="startup, app, event, planning, scheduling, Who's Down?">
+    <meta name="author" content="Arjun Bhatt">
+    <title>Who's Down? – The platform to connect event creators and people like you.</title>
+</head>
+
+<nav>
+  <!-- Adapted from https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535-->
+  <ul class="menu">
+    <li class="logo"><a href="#">Who's Down</a></li>
+    <li class="item"><a href="#">Home</a></li>
+    <li class="item"><a href="#">How it Works</a></li>
+    <li class="item"><a href="#">About/Growth</a></li>
+    <li class="item"><a href="#">Contact/Careers</a></li>
+    </li>
+    <li class="item button"><a href="#">Log In</a></li>
+    <li class="item button secondary"><a href="#">Sign Up</a></li>
+  </ul>
+</nav>
+<!-- copied from https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar-->
+<div class="copyw3">
+<ul>
+  <li><a href="#home">We love buttons!</a></li>
+  <li><a href="#news">We're out of time so we're really just putting whatever here.</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Oooh look a dropdown!</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Anotha one</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+      <a href="#">Link 5</a>
+    </div>
+  </li>
+</ul>
+</div>
+
+<body>
+  <section class="greeting_sxn">
+    <panel class="greeting">
+      <h1>Are you down?</h1>
+    </panel>
+    <panel id="offset_greeting">
+      <p><strong>Who's down is the premiere platform to connect event creators and event seekers. I'm realizing I don't actually have a huge amount of content to put here as I'm working towards a pretty tight deadline but throughout this course I will continue to work on this project and hopefully it'll work out. </strong></p>
+      <form action="#">
+        <label for="email">Signup for email updates:</label>
+        <input type="text" id="email" name="email">
+      </form>
+      <p>For organizations, clubs, & individuals. Available on iOS, Android, and Web.</p>
+
+    </panel>
+  </section>
+
+    <section class="display_sxn">
+      <display id="1">
+        <h2>For event creators</h2>
+
+      <imgset>
+        <a href="#"><img class="dynamic" src="clock.png" alt="Be spontaneous!" width="64" height="64"></a>
+        <a href="#"><img class="dynamic" src="tag.png" alt="#Categorize" width="64" height="64"></a>
+        <a href="#"><img class="dynamic" src="place.png" alt="#Categorize" width="64" height="64"></a>
+      </imgset>
+
+        <!-- click on each image to get the corresponding list element to show up-->
+
+        <ol>
+          <li>Be spontaneous! Post your event no more than 12 hours in advance.</li>
+          <li>Choose tags to send notifications to users subscribed to those feeds.</li>
+          <li><em>PUT IT ON THE MAP!</em> and have a blast!</li>
+        </ol>
+        
+      </display>
+
+      <display id="2">
+        <h2>For event seekers</h2>
+
+        <imgset>
+          <a href="#"><img class="dynamic" src="idea.png" alt="Be spontaneous!" width="64" height="64"></a>
+          <a href="#"><img class="dynamic" src="qa.png" alt="#Categorize" width="64" height="64"></a>
+          <a href="#"><img class="dynamic" src="location.png" alt="#Categorize" width="64" height="64"></a>
+        </imgset>
+
+        <ol>
+          <li>You down to, like, do something?</li>
+          <li>Open the map!</li>
+          <li>Join an event, chat with the event creator, and meet up and do something!</li>
+          <ul>
+              <li>Note: in the time of COVID-19, maybe don't meet up. But still do things!!!</li>
+          </ul>
+
+        </ol>
+      </display>
+    </section>
+
+    <section class="form_box">
+      <panel class="user_test">
+        <h3>Try it yourself!</h3>
+        <br>
+        <form action="#">
+            <label for="Event">Event Name:</label>
+            <input type="text" id="Event" name="Event"><br>
+            <label for="Category">Category:</label>
+            <select id="Categories">
+                <option value="Sports">Sports</option>
+                <option value="Culture">Culture</option>
+                <option value="Nightlife">Nightlife</option>
+                <option value="Food">Food</option>
+                <option value="Misc">Other</option>
+            </select>
+            <label for="notifs"> Send notifications?</label>   
+            <input type="checkbox" name="notifs" value="yn">
+            <!--Start time dropdown menu-->
+            <label for="stime"><br>Start Time:</label>
+            <select id="stimeh">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <label for="stime">:</label>
+              <select id="stimem">
+                <option value="5">00</option>
+                <option value="5">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+              </select>
+              <select id="ampm">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+              </select>
+              <!-- End time Dropdown Menu-->
+              <label for="etime"><br>End Time:</label>
+              <select id="etimeh">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <label for="etime">:</label>
+              <select id="etimem">
+                <option value="5">00</option>
+                <option value="5">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+              </select>
+              <select id="ampm">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+              </select>
+              <br>
+              <label for="Description">Event Description:</label><br>
+              <textarea name="Description" rows="10">Type your awesome event description here!</textarea>
+              <label for="map"><br><br>Unfortunately, I think I'll need javascript to actually put it on a map. But once the js is there, click either button below to <em> PUT IT ON THE MAP!</em></label>
+              <br><br>
+              <button type="button" onclick="alert('Your event is on the map!')">Click Me!</button>
+              <button class="button">Alternatively, click me!</button>
+      </panel>
+    </section>
+    <section>
+      <panel class="hist">
+        <h1>About/Growth</h1>
+        <p>Who's Down started with a few undergrads who just got too many emails. The rest is a story of love, heartbreak, betrayal, and war. But soon it'll also be a story of an app!</p>
+        <h2>Timeline</h2>
+        <ul>
+            <li>Winter 2018: The idea is born.</li>
+            <li>All the time since: Things happened, people were hired, project was started several times but alas.</li>
+            <!--<img src="IMG_0931.jpeg" alt="Who's Down wins Best Pitch!" width="410" height="230">-->
+            <li>Spring 2020: It finally happens.</li>
+        </ul>
+        <h2>Initiatives</h2>
+        <ul>
+            <li>Ill-fated hardcopy of Who's Down</li>
+            <li>Student employment (lol)</li>
+        </ul>
+      </panel>
+    </section>
+    <h1>Testimonials</h1>
+    <section class="quotes">
+        <panel class="quote">
+          <p> <em>This product is amazing!</em><br><person>–—Somebody Important</person></p>
+        </panel>
+        <panel class="quote">
+          <p><em>Wow wow wee wah</em><br><person>——Somebody Influential</person></p>
+        </panel>
+        <panel class="quote">
+          <p><em>Bada bing. Wait for it. Bada boom.</em><br><person>——Your average Joe.</person></p>
+        </panel>
+    </section>
+    <section class="contact">
+      <panel>
+        <h1> Contact/Careers</h1>
+        <p>Founder & CEO: Arjun Bhatt: <a href="mailto:bhatt.arjun2020@gmail.com?Subject=Down%20For%20WD!" target="_top">email</a><br />Employee 1: Once upon a time <br /> Employee 2: Believe it or not, he existed too. <br /> Employee 3: Only at its peak.</p>
+
+        <!-- adopted from https://support.google.com/docs/answer/183965?co=GENIE.Platform%3DDesktop&hl=en-->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXTZZhdgzzWe4SSRJIjaUs23lNpA4pO2YpXOr2kubDsApRNg/viewform?embedded=true" width="640" height="510" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </panel>
+  </section>
+    <footer>
+        <p>This is a footer. Copyright boogityboogityboo I cast a spell on you Who's Down you cannot sue. Sorry, that's legally binding. Link <a href="#"> 1 </a> and Link <a href="#">2 </a> just for you!</p>
+      </footer>
+
+</body>
 </html>
