@@ -1,19 +1,8 @@
-/* Adapted from https://www.webucator.com/how-to/how-create-css-external-style-sheet.cfm */
-
 html{
-    /* Adapted from https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_background5 and 
-    https://krasimirtsonev.com/blog/article/CSS-Challenge-1-expand-and-center-image-fill-div */
-
-    background-image: url('backgrnd.jpg');
-    background-size: cover;
-    background-position: center center;
-    height: 385px;
-    margin: auto;
-    max-width: 500 px !important;
-    align-items: center;
+    scroll-behavior: smooth;
 }
 
-/* Similarly copied from https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535 */
+/* Copied from Lab 1 */
 nav {
     background: #222;
     padding: 5px 20px;
@@ -23,7 +12,7 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
 }
 a {
-    color: white;
+    color: white !important;
     text-decoration: none;
 }
 a:hover {
@@ -31,15 +20,6 @@ a:hover {
 }
 .logo a:hover {
     text-decoration: none;
-}
-.menu li {
-    font-size: 16px;
-    padding: 15px 5px;
-    white-space: nowrap;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.logo a, .toggle a {
-    font-size: 20px;
 }
 .button.secondary {
     border-bottom: 1px #444 solid;
@@ -51,9 +31,6 @@ a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-.toggle {
-    order: 1;
 }
 .item.button {
     order: 2;
@@ -136,223 +113,237 @@ a:hover {
         padding-right: 0;
     }
 }
-/* End of that rather large copy */
-
-h1  {
-    color: black;
-    font-size: 5em;
-    margin-bottom: .3em;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-h2, h3, form {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-ol li {
+html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-ul li {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-p{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-  table {
-    margin: .3em;
-    width: 290px;
-  }
-  
-  th {
-    padding: .2em;
-  }
-  
-  td {
-    background-color: #ffc;
-    border: 1px solid #900;
-    padding-left: .5em;
-    padding-right: .5em;
-  }
-  
-  #trHeader {
-    color: #900;
-    text-decoration: underline;
-  }
-  
-  .centerCell {
-    text-align: center;
-  }
-
-  section{
-    display: flex
-
-  }
-
-  /*Flexbox business aided by https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox */
-  display{
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    background: black;
-    text-align: center;
-  }
-
-  display ol li{
-      text-align: left;
-  }
-
-  imgset{
-      display:flex;
-      justify-content: space-around;
-    }
-
-  imgset img{
-    padding: 10px;
-    margin: 10px;
-    background: orange;
-    flex-grow: 1;
-    justify-content: space-between;
-    flex-shrink: 0;
-    max-width: 64;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  section panel.hist{
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    background: black;
-    text-align: center;
-    background-image: url(IMG_0931.jpeg);
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-shadow:2px 2px rgb(230, 224, 215);
-    color: black;
-    background-position: center;
-    background-repeat: no-repeat;
+img#header{
+    width: 50%;
     background-size: cover;
-    position: relative;
-  }
-  
-
-panel.quote{
-    padding: 10px;
-    margin: 10px;
-    justify-content: space-evenly;
-    background: yellowgreen;
-  }
-
-  panel.user_test{
-    padding: 10px;
-    margin: 10px;
-    justify-content: space-evenly;
-    background: pink;
-    width: 500px;
-  }
-
-  panel.greeting{
-    padding: 10px;
-    margin: 10px;
-    align-items: center;
-    justify-items: center;
-    padding-left: 30ch;
-  }
-
-  panel#offset_greeting{
-      margin: 130px !important;
-      padding-left: 0% !important;
-  }
-
-  panel.user_test textarea{
-      height:50 vh;
-  }
-
-img.dynamic {
-    border: 0;
-    background: orange;    
 }
-img.dynamic:hover {
-    background:orangered;
-} 
 
-section.form_box, section.display_sxn, section.greeting_sxn{
+qset{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    max-width: 90%;
-}
-
-panel#offset_greeting p{
-    color: gray;
-
-}
-
-panel#offset_greeting p strong{
-    color:black;
-}
-
-section.quotes, section.contact{
-    justify-content: center;
-    align-content: center;
-    place-content: center;
-}
-
-
-/* copied from w3 */
-
-div.copyw3 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-  }
-  
-  div.copyw3 li {
-    float: left;
-  }
-  
-  div.copyw3 li a, .dropbtn {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  div.copyw3 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-  }
-  
-  div.copyw3 li.dropdown {
-    display: inline-block;
-  }
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
     text-align: left;
+}
+
+qa{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+q{
+    justify-items: center;
+
+}
+
+as{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+img#q1a, img#q4a{
+    background-color:white;
+    width: 150px;
+}
+
+heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+img#header{
+    margin-left: 25%;
+    margin-right: 25%;
+    width:50%
+}
+
+as#text label{
+    color: black;
+}
+
+as#text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+textarea{
+    width: 50%;
+}
+
+#q7a{
+    width: 250%;
+}
+
+img:hover{
+    filter: brightness(150%);
+}
+
+[type=radio]:hover ~ img{
+    filter: brightness(150%);
+
+}
+
+img#header:hover{
+    filter: none;
+}
+
+img{
+    filter: none;
+}
+
+#q6a:hover{
+    text-decoration: underline;
+}
+
+input[type=radio] :checked{
+    border: 5px magenta;
+  }
+
+
+  [type=radio] { 
+    position: relative;
+    bottom: 50%;
+    left: 50%;
+    top: 50%;
+    opacity: 0%;
+    border: 1px purple;
   }
   
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
+
+  /* CHECKED STYLES */
+  [type=radio]:checked ~ img {
+    outline: 2px solid #f00;
   }
+
+  [type=radio]:checked + label {
+    outline: 2px solid #f00;
+  }
+
+
+/* Copied from https://developer.mozilla.org/en-US/docs/Web/CSS/:checked */
+/* Labels for checked inputs */
+  
+  /* Radio element, when checked */
+  input[type="radio"]:checked {
+    box-shadow: 0 0 0 3px orange;
+  }
+
+
+/* End copy */
+
+
+/* Copied from that same w3schools https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close */
+/* But honestly, a lot of this I've added, so maybe adapted is the better word? */
+div.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: all 0.25s ease-in;
+    -moz-animation: all 0.25s ease-in;
+  }
+  
+  /* Modal Content */
+  div.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    animation: all 0.25s ease-in;
+  }
+  
+  /* The Close Button */
+  span.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    animation: all 0.25s ease-out;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  input[type="radio"].not_chosen ~ img{
+    filter: blur(5px);
+  }
+  
+  input[type="radio"].not_chosen ~ img:hover{
+      filter: blur(2px);
+  }
+
+  label.not_chosen{
+      text-decoration: line-through;
+  }
+
+
+  /* Taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider_pic */
+  .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    margin-left: 20%;
+    width: 60%;
+    height: 10px;
+    border-radius: 5px;
+    background: #742f2f;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 75px;
+    height: 100px;
+    border: 0;
+    background: url('placeholder.jpeg');
+    cursor: pointer;
+  }
+  
+  .slider::-webkit-slider-thumb:hover {
+    background: url("placeholder2.jpeg");
+  }
+
+  .slider::-moz-range-thumb {
+    width: 75px;
+    height: 100px;
+    border: 0;
+    background: url('placeholder.jpeg');
+    cursor: pointer;
+  }
+
+  div.slidecontainer p{
+      text-align: center;
+  }
+
+  

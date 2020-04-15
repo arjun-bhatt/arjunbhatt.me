@@ -1,0 +1,358 @@
+/* Adapted from https://www.webucator.com/how-to/how-create-css-external-style-sheet.cfm */
+
+html{
+    /* Adapted from https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_background5 and 
+    https://krasimirtsonev.com/blog/article/CSS-Challenge-1-expand-and-center-image-fill-div */
+
+    background-image: url('backgrnd.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 385px;
+    margin: auto;
+    max-width: 500 px !important;
+    align-items: center;
+}
+
+/* Similarly copied from https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535 */
+nav {
+    background: #222;
+    padding: 5px 20px;
+}
+.menu ul {
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo a, .toggle a {
+    font-size: 20px;
+}
+.button.secondary {
+    border-bottom: 1px #444 solid;
+}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle {
+    order: 1;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+.item.active {
+    display: block;
+}
+
+/* Tablet menu */
+@media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+}
+
+/* Desktop menu */
+@media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+}
+/* End of that rather large copy */
+
+h1  {
+    color: black;
+    font-size: 5em;
+    margin-bottom: .3em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+h2, h3, form {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+ol li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+  table {
+    margin: .3em;
+    width: 290px;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    background-color: #ffc;
+    border: 1px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  
+  #trHeader {
+    color: #900;
+    text-decoration: underline;
+  }
+  
+  .centerCell {
+    text-align: center;
+  }
+
+  section{
+    display: flex
+
+  }
+
+  /*Flexbox business aided by https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox */
+  display{
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    background: black;
+    text-align: center;
+  }
+
+  display ol li{
+      text-align: left;
+  }
+
+  imgset{
+      display:flex;
+      justify-content: space-around;
+    }
+
+  imgset img{
+    padding: 10px;
+    margin: 10px;
+    background: orange;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-shrink: 0;
+    max-width: 64;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  section panel.hist{
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    background: black;
+    text-align: center;
+    background-image: url(IMG_0931.jpeg);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-shadow:2px 2px rgb(230, 224, 215);
+    color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+
+panel.quote{
+    padding: 10px;
+    margin: 10px;
+    justify-content: space-evenly;
+    background: yellowgreen;
+  }
+
+  panel.user_test{
+    padding: 10px;
+    margin: 10px;
+    justify-content: space-evenly;
+    background: pink;
+    width: 500px;
+  }
+
+  panel.greeting{
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    justify-items: center;
+    padding-left: 30ch;
+  }
+
+  panel#offset_greeting{
+      margin: 130px !important;
+      padding-left: 0% !important;
+  }
+
+  panel.user_test textarea{
+      height:50 vh;
+  }
+
+img.dynamic {
+    border: 0;
+    background: orange;    
+}
+img.dynamic:hover {
+    background:orangered;
+} 
+
+section.form_box, section.display_sxn, section.greeting_sxn{
+    justify-content: center;
+    max-width: 90%;
+}
+
+panel#offset_greeting p{
+    color: gray;
+
+}
+
+panel#offset_greeting p strong{
+    color:black;
+}
+
+section.quotes, section.contact{
+    justify-content: center;
+    align-content: center;
+    place-content: center;
+}
+
+
+/* copied from w3 */
+
+div.copyw3 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  div.copyw3 li {
+    float: left;
+  }
+  
+  div.copyw3 li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  div.copyw3 li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  div.copyw3 li.dropdown {
+    display: inline-block;
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
