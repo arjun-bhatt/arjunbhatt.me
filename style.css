@@ -347,3 +347,79 @@ div.modal {
   }
 
   
+.sticky {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+
+.footer {
+    padding: 10px 16px;
+    background: #555;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+res{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+  img#event_icon{
+      content: url("coming_soon.jpg");
+      width: 4em;
+  }
+
+  img#event_icon.culture{
+      content: url("painting.svg");
+  }
+
+  img#event_icon.nightlife{
+      content: url("nightlife.svg");
+  }
+
+  img#event_icon.sports{
+      content: url("sports.svg");
+    }
+
+  img#event_icon.boardgames{
+      content: url("monopoly.svg");
+  }
+
+  img#event_icon.educational{
+    content: url("space.svg");
+}
+
+#notify-badge.show_ns{
+    position: absolute;
+    right:-80px;
+    top:-10px;
+    background:red;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color:white;
+    padding:5px 10px;
+    font-size:20px;
+    position:relative;
+    padding-top:0px;
+    display:inline-block;
+    height: 50%;
+}
+
+#notify-badge{
+    display: none;
+}
+
+#long_response{
+    justify-content: left !important;
+    margin-right: 100%;
+}

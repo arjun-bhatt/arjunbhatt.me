@@ -12,7 +12,7 @@ var q6a_rad = Array();
 var text_as = Array.from(document.querySelectorAll('label#q6a'))
 var scroll_loc = document.getElementsByClassName("footer");
 var sample_text = document.getElementById("event_title_input");
-var notes = document.getElementById("long_response").value
+var notes = document.getElementById("long_response")
 
 console.log(text_as)
 
@@ -44,6 +44,24 @@ var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+
+function get_user_input(){
+    var choices = $("input[type='radio']:checked").map(function(i, radio) {
+        return $(radio).val();
+      }).toArray();
+    var slide_choices = $("input[type='range']").map(function(i, range){
+          return $(range).val();
+      }).toArray();
+    
+      /* taken from https://dzone.com/articles/ways-to-combine-arrays-in-javascript */
+      var full_choices = [...choices, ...slide_choices];
+      full_choices.push(notes.value);
+      full_choices.push(document.getElementById("q7a").value)
+      full_choices.push(sample_text.value)
+
+    return full_choices;
+}
+
 function change_modal(){
   console.log("hi!")
   var choices = $("input[type='radio']:checked").map(function(i, radio) {
@@ -53,11 +71,15 @@ function change_modal(){
       return $(range).val();
   }).toArray();
 
+
   /* taken from https://dzone.com/articles/ways-to-combine-arrays-in-javascript */
   var full_choices = [...choices, ...slide_choices];
+  full_choices.push(notes.value);
+  full_choices.push(document.getElementById("q7a").value)
+  full_choices.push(sample_text.value)
+
   console.log(full_choices)
 
-  console.log(choices);
   console.log("hi!)");
   var disp_answer;
   var disp_img = document.createElement("IMG");  
@@ -118,6 +140,8 @@ window.onclick = function(event) {
     /* much thanks to this: https://stackoverflow.com/questions/8206565/check-uncheck-checkbox-with-javascript-jquery-or-vanilla */
     clicked_img.previousElementSibling.click()
   }
+
+  update_footer(get_user_input());
 
 }
 
@@ -234,13 +258,84 @@ function scrollIt(destination, duration = 200, easing = 'linear') {
     scroll();
   }
 
+var cat_options = ["culture", "nightlife", "sports", "boardgames", "educational"]
+
+function update_footer(choices){
+    var quiz_prog = document.getElementById("quiz_progress");
+    var footer_img = document.getElementById("event_icon");
+    var notif = document.getElementById("notify-badge");
+    var lt = Array.from(choices).length
+    const num_q = 8
+    quiz_prog.innerHTML = String(Math.round(Array.from(choices).length / (num_q/100))) + "%";
+
+    console.log(notif)
+    console.log("Update footer called!")
+    console.log("length is", lt)
+    console.log(choices)
+
+    footer_img.style.opacity = String(120-slider.value) + "%"
+
+    if (findCommonElements3(choices, cat_options)){ //so basically, if they've picked a category
+        footer_img.className = ""
+        footer_img.classList.add(String(getCommon(choices, cat_options)))
+    }
+    
+    if (Array.from(choices).includes("Pro")){
+        footer_img.style.border = "5px solid red"
+    }
+    if (Array.from(choices).includes("Hobbyist")){
+        footer_img.style.border = "5px solid blue"
+
+    }
+    if (Array.from(choices).includes("Casual")){
+        footer_img.style.border = "5px solid green"
+    }
+
+    if (true){
+        console.log("we're right here")
+        if ((Boolean(Array.from(choices)[lt-2]) || Boolean(Array.from(choices)[lt-3]))){
+            notif.classList.add("show_ns");
+            console.log("added show ns class!")
+
+        }
+        else{
+            if (!((Boolean(Array.from(choices)[lt-2]) && Boolean(Array.from(choices)[lt-3])))){
+                console.log("theoretically removed notif id")
+                notif.classList.remove("show_ns");
+            }
+
+       }
+
+    }
+}
+/* below function from https://www.geeksforgeeks.org/how-to-find-if-two-arrays-contain-any-common-item-in-javascript/ */
+/* returns whether or not two arrays have a common element */
+function findCommonElements3(arr1, arr2) { 
+    return arr1.some(item => arr2.includes(item)) 
+} 
+
+/* Below function actually gets the common elements between two arrays */
+/* from https://www.codespeedy.com/get-common-elements-from-two-arrays-in-javascript/ */
+function getCommon(arr1, arr2) {
+    var common = [];                   // Array to contain common elements
+    for(var i=0 ; i<arr1.length ; ++i) {
+      for(var j=0 ; j<arr2.length ; ++j) {
+        if(arr1[i] == arr2[j]) {       // If element is in both the arrays
+          common.push(arr1[i]);        // Push to common array
+        }
+      }
+    }
+    
+    return common;                     // Return the common elements
+  }
+
 
 var slider = document.getElementById("myRange1");
 var slider2 = document.getElementById("myRange2")
 var output = document.getElementById("demo");
 var output2 = document.getElementById("demo2")
-output.innerHTML = slider.value;
-output2.innerHTML = slider2.value;
+/*output.innerHTML = slider.value;
+output2.innerHTML = slider2.value;*/
 
 slider.oninput = function() {
   output.innerHTML = compute_start(this.value);
@@ -327,3 +422,17 @@ function compute_start(val){
             return (time)
         }
 
+window.onscroll = function() {myFunction()};
+
+var footer = document.getElementById("myFooter");
+var sticky = footer.offsetTop;
+
+function myFunction() {
+    console.log("scroll triggered!")
+    if (window.pageYOffset < sticky) {
+    footer.classList.add("sticky");
+    } 
+    else {
+    footer.classList.remove("sticky");
+    }
+}

@@ -204,44 +204,51 @@
                         <h2>8) Additional Notes?</h2>
                     </q>
                     <as>
-                        <textarea id="long_response" name="message"></textarea>
+                        <label for="notes"></label>
+                        <input type="text" id="long_response" name="message" value="">
+                        <!--<textarea id="long_response" name="message"></textarea>-->
                     </as>
                 </qa>
-
-
-
-
-                
-
-
-
             </form>
         </qset>
 
 
         <!-- Copied from https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_close maybe adapted though. I've kind of amalgamated a million of these together-->
-                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-                <body>
-                
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <body>
                 <div class="w3-container">
-                  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" id="myBtn">Calculate Results!</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" id="myBtn">Calculate Results!</button>
                 
-                  <div id="id01" class="w3-modal">
+                <div id="id01" class="w3-modal">
                     <div class="w3-modal-content w3-animate-top w3-card-4">
-                      <header class="w3-container w3-teal"> 
+                    <header class="w3-container w3-teal"> 
                         <span onclick="document.getElementById('id01').style.display='none'" 
                         class="w3-button w3-display-topright">&times;</span>
-                      </header>
-                      <div class="w3-container">
+                    </header>
+                    <div class="w3-container">
                         <p>Some text..</p>
                         <p>Some text..</p>
-                      </div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-                </body>
-                </html>
-                
+                </div>
+            </body>
+        
+
+            <br><br><br><br><br><br>
+
+        <footer class="footer" id="myFooter">
+            <res>
+                <p>Progress: <sec id="quiz_progress">63% (our autofill means you're already more than halfway there!)</sec></p>
+            </res>
+            <res>
+                <p >Your Icon:  </p>
+                <span id="notify-badge">N</span>
+                <img id="event_icon"><img>
+            </res>
+            </res>
+        </footer>        
+        
 
                 
         <script src="main.js"></script>
