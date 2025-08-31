@@ -7,14 +7,14 @@ const projects = [
 
 function LandingPage() {
   return (
-    <div style={{ padding: '2rem' }}>
+    <div id="landing-page" className="page-container">
       <h1>Welcome to My Web Development Portfolio</h1>
       <p>Explore my projects below:</p>
       <ul>
         {projects.map(project => (
-          <li key={project.name} style={{ marginBottom: '1rem' }}>
-            <a href={project.path} style={{ fontSize: '1.2rem', color: '#007bff' }}>{project.name}</a>
-            <div>{project.description}</div>
+          <li key={project.name} className="project-list-item">
+            <a href={project.path} className="project-link">{project.name}</a>
+            <div className="project-description">{project.description}</div>
           </li>
         ))}
       </ul>

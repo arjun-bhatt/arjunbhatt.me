@@ -8,16 +8,16 @@ function ProjectTwo() {
   const [input, setInput] = React.useState('');
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div id="project-two" className="page-container">
       <h2>Project Two: Zustand Todo List</h2>
       <p>A simple todo list using Zustand for state management.</p>
-      <input value={input} onChange={e => setInput(e.target.value)} placeholder="Add todo..." style={{ marginRight: '1rem' }} />
-      <button onClick={() => { if(input) { addTodo(input); setInput(''); } }}>
+      <input value={input} onChange={e => setInput(e.target.value)} placeholder="Add todo..." className="todo-input" />
+      <button onClick={() => { if(input) { addTodo(input); setInput(''); } }} className="todo-add-btn">
         Add
       </button>
-      <ul>
+      <ul className="todo-list">
         {todos.map((todo, idx) => (
-          <li key={idx}>{todo}</li>
+          <li key={idx} className="todo-list-item">{todo}</li>
         ))}
       </ul>
     </div>

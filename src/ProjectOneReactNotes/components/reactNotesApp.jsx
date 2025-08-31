@@ -84,31 +84,28 @@ export function reactNotesApp(props) {
 	function renderNotes() {
 		if (notes) {
 			return(
-				<div>
+				<div id="notes-list" className="notes-list">
 					{Object.entries(notes).map(([id, note]) => (
-						<div key={id}>
-							<Note
-								id={id}
-								// editingID={IDofCurrentlyEditedNote} //I want every note to know which note is being edited
-								title={note.title}
-								text={note.text}
-								x={note.x}
-								y={note.y}
-								zIndex={note.zIndex}
-								beingEdited={note.beingEdited}
-								deleteNote={() => deleteNote(id)} // so you are always passing the note's ID here, so in the Note component you don't need to specify anything
-								editNote={(updatedFields) => editNote(id, updatedFields)} //maybe needs an ID next to updatedFields? 
-								// while here, you do want to specify the parameter passed to the editing function is whatever is sent from the Note component
-							/>
-						</div>))}
+						<Note
+							key={id}
+							id={id}
+							title={note.title}
+							text={note.text}
+							x={note.x}
+							y={note.y}
+							zIndex={note.zIndex}
+							beingEdited={note.beingEdited}
+							deleteNote={() => deleteNote(id)}
+							editNote={(updatedFields) => editNote(id, updatedFields)}
+						/>
+					))}
 				</div>
-
 			);
 		}
 	}
     
 	return(
-		<div>
+		<div id="react-notes-app" className="react-notes-app">
 			<NewNoteButton addNote={addNote}/>
 			{renderNotes()}
 		</div>

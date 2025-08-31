@@ -23,22 +23,26 @@ const Note = (props) => {
 	const renderNoteContent = () => {
 		if (props.beingEdited) {
 			return(
-				<div className='note-content-while-editing'>
-					<div className='note-title-row'>
-						<div className='note-title-while-editing outlined'>
+				<div className='note-content-while-editing' id={`note-content-editing-${props.id}`}>
+					<div className='note-title-row' id={`note-title-row-editing-${props.id}`}>
+						<div className='note-title-while-editing outlined' id={`note-title-editing-${props.id}`}>
 							<input
 								type="text"
+								className="note-title-input"
+								id={`note-title-input-${props.id}`}
 								value={props.title}
 								onChange={(e) => props.editNote({ title: e.target.value })}
 							/>
 						</div>
-						<div className='note-actions'>
+						<div className='note-actions' id={`note-actions-editing-${props.id}`}>
 							{renderEditButton()}
 							{renderDeleteButton()}
 						</div>
 					</div>
-					<div className='note-textarea-while-editing outlined'>
+					<div className='note-textarea-while-editing outlined' id={`note-textarea-editing-${props.id}`}>
 						<textarea
+							className="note-textarea-input"
+							id={`note-textarea-input-${props.id}`}
 							value={props.text}
 							onChange={(e) => props.editNote({ text: e.target.value })}
 						/>
@@ -47,17 +51,17 @@ const Note = (props) => {
 			);
 		} else {
 			return(
-				<div className='note-content-while-not-editing'>
-					<div className='note-title-row'>
-						<div className='note-title outlined'>
+				<div className='note-content-while-not-editing' id={`note-content-not-editing-${props.id}`}>
+					<div className='note-title-row' id={`note-title-row-not-editing-${props.id}`}>
+						<div className='note-title outlined' id={`note-title-not-editing-${props.id}`}>
 							<ReactMarkdown>{props.title || ''}</ReactMarkdown>
 						</div>
-						<div className='note-actions'>
+						<div className='note-actions' id={`note-actions-not-editing-${props.id}`}>
 							{renderEditButton()}
 							{renderDeleteButton()}
 						</div>
 					</div>
-					<div className='note-text outlined'>
+					<div className='note-text outlined' id={`note-text-not-editing-${props.id}`}>
 						<ReactMarkdown>{props.text || ''}</ReactMarkdown>
 					</div>
 				</div>
@@ -66,7 +70,7 @@ const Note = (props) => {
 	};
 
 	return (
-		<div className="note">
+		<div id={`${props.id}`}>
 			<Draggable
 				nodeRef={nodeRef}
 				position={{x: props.x, y: props.y}}
@@ -75,11 +79,10 @@ const Note = (props) => {
 					props.editNote({ x: data.x, y: data.y });
 				}}
 			>
-				<div className='drag-me' ref={nodeRef}>
+				<div className='drag-me note-draggable' ref={nodeRef}>
 					{renderNoteContent()}
 				</div>
 			</Draggable>
-			<br></br>
 		</div>
 	);
 };

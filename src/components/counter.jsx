@@ -8,7 +8,7 @@ function Counter(props) {
 
   const count = useStore((state) => state.count);
   return (
-    <div>
+    <div className="counter-container">
       Current Count: {count}
     </div>
   );

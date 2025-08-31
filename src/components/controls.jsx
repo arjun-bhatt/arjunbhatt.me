@@ -6,9 +6,9 @@ function Controls(props) {
   const decrement = useStore((state) => state.decrement);
 
   return (
-    <div>
-      <button type="button" onClick={increment}>+</button>
-      <button type="button" onClick={decrement}>-</button>
+    <div className="controls-container">
+      <button type="button" onClick={increment} className="control-btn">+</button>
+      <button type="button" onClick={decrement} className="control-btn">-</button>
     </div>
   );
 }
