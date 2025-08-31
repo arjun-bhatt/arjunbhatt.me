@@ -2,7 +2,8 @@ import React from 'react';
 
 const projects = [
   { name: 'Project One', path: '/project-one', description: 'A sample webapp using React and Zustand.' },
-  { name: 'Project Two', path: '/project-two', description: 'Another demo webapp with state management.' }
+  { name: 'Project Two', path: '/project-two', description: 'Another demo webapp with state management.' },
+  {name: 'Project Three', path:'http://www.whoiskp.me', description: 'A blog for Kashmiri Pandits which solicits worldwide contributions from the community.'}
 ];
 
 function LandingPage() {
